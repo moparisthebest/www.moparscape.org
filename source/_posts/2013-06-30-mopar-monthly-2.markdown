@@ -3,7 +3,7 @@ layout: post
 title: "Mopar Monthly #2"
 date: 2013-06-30 00:00
 comments: true
-categories: [MoparScape, RSPS, RS, Mopar, Monthly]
+categories: [MoparScape, RSPS, RS, Mopar Monthly]
 author: Flame_
 ---
 This month on the Mopar Monthly:
