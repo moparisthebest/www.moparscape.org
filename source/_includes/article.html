@@ -16,6 +16,33 @@
   </header>
 {% endunless %}
 
+{% unless ad1_displayed %}
+{% assign ad1_displayed = true %}
+{% if site.google_bannerad_slot %}
+  <script type="text/javascript"><!--
+  google_ad_client = "{{site.google_ad_client}}";
+  google_ad_slot = "{{site.google_bannerad_slot}}";
+  google_ad_width = {{site.google_bannerad_width}};
+  google_ad_height = {{site.google_bannerad_height}};
+  //-->
+  </script>
+  <script type="text/javascript"
+  src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+  </script>
+{% endif %}
+{% endunless %}
+
+{% if index %}
+  <div class="entry-content">{{ content | excerpt }}</div>
+  {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
+  {% if excerpted == 'true' %}
+    <footer>
+      <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
+    </footer>
+  {% endif %}
+{% else %}
+<div class="entry-content">{{ content }}</div>
+
 {% if site.google_bannerad_slot %}
   <script type="text/javascript"><!--
   google_ad_client = "{{site.google_ad_client}}";
@@ -29,14 +56,4 @@
   </script>
 {% endif %}
 
-{% if index %}
-  <div class="entry-content">{{ content | excerpt }}</div>
-  {% capture excerpted %}{{ content | has_excerpt }}{% endcapture %}
-  {% if excerpted == 'true' %}
-    <footer>
-      <a rel="full-article" href="{{ root_url }}{{ post.url }}">{{ site.excerpt_link }}</a>
-    </footer>
-  {% endif %}
-{% else %}
-<div class="entry-content">{{ content }}</div>
 {% endif %}
