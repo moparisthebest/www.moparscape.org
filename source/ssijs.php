@@ -4,7 +4,7 @@ function getRequest($request, $default = null)
     return empty($_REQUEST[$request]) ? $default : $_REQUEST[$request];
 }
 
-require_once("/home/www-data/htdocs/moparisthebest.com/smf/SSI.php");
+require_once("/home/www-data/htdocs/moparscape.org/smf/SSI.php");
 
 header('Access-Control-Allow-Credentials: true');
 header('Access-Control-Expose-Headers: Link, X-RateLimit-Limit, X-RateLimit-Remaining, X-OAuth-Scopes, X-Accepted-OAuth-Scopes');
